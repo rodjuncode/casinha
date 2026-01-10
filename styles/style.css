@@ -123,7 +123,7 @@ button {
 .nav-link {
     font-family: var(--font-text);
     font-weight: 500;
-    color: var(--color-black);
+    color: var(--color-highlight);
     transition: color var(--transition-fast);
     position: relative;
 }
@@ -197,16 +197,21 @@ button {
     font-family: var(--font-title);
     font-size: 2rem;
     font-weight: 900;
-    color: var(--color-black);
-    margin-bottom: var(--spacing-sm);
+    color: var(--color-main);
+    margin-bottom: var(--spacing-md);
     line-height: 1.2;
 }
 
 .hero-caption {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--color-black);
     margin-bottom: var(--spacing-md);
     opacity: 0.8;
+}
+
+.hero-caption span {
+    color: var(--color-main);
+    font-weight: 600;
 }
 
 .cta-button {
@@ -254,7 +259,7 @@ button {
     }
     
     .hero-caption {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 }
 
