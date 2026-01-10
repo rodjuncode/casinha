@@ -494,6 +494,49 @@ button {
 }
 
 /* ============================================
+   Pattern Separator
+   ============================================ */
+
+.pattern-separator {
+    position: relative;
+    height: 250px;
+    background-image: url('../assets/pattern.svg');
+    background-size: 62px 37px;
+    background-position: 0 0;
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pattern-icon {
+    width: 150px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .pattern-separator {
+        height: 350px;
+    }
+    
+    .pattern-icon {
+        width: 210px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pattern-separator {
+        height: 450px;
+    }
+    
+    .pattern-icon {
+        width: 270px;
+    }
+}
+
+/* ============================================
    Testimonials / Carousel
    ============================================ */
 
@@ -665,6 +708,7 @@ button {
 .footer-title {
     font-family: var(--font-title);
     font-size: 1.5rem;
+    line-height: 1.2;
     font-weight: 700;
     color: var(--color-main);
     margin-bottom: var(--spacing-xs);
