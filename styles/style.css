@@ -573,7 +573,7 @@ button {
     position: relative;
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     margin: var(--spacing-md) 0;
 }
 
@@ -589,7 +589,7 @@ button {
 
 .testimonial-card {
     min-width: 100%;
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-sm);
     background-color: var(--color-white);
     border-radius: 20px;
     opacity: 0;
@@ -608,14 +608,14 @@ button {
 }
 
 .testimonial-stars img {
-    height: 24px;
+    height: 20px;
 }
 
 .testimonial-text {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-    padding-top: var(--spacing-sm);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    padding-top: var(--spacing-xs);
     font-style: italic;
     color: var(--color-black);
 }
@@ -628,13 +628,13 @@ button {
 
 .testimonial-name {
     font-family: var(--font-title);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: var(--color-main);
 }
 
 .google-link {
-    font-size: 0.875rem;
+    font-size: 0.813rem;
     color: var(--color-highlight);
     transition: color var(--transition-fast);
 }
@@ -645,9 +645,52 @@ button {
 }
 
 .carousel-arrow {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .carousel-container {
+        gap: var(--spacing-sm);
+    }
+    
+    .testimonial-card {
+        padding: var(--spacing-md);
+    }
+    
+    .testimonial-stars img {
+        height: 24px;
+    }
+    
+    .testimonial-text {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+        padding-top: var(--spacing-sm);
+    }
+    
+    .testimonial-name {
+        font-size: 1.25rem;
+    }
+    
+    .google-link {
+        font-size: 0.875rem;
+    }
+    
+    .carousel-arrow {
+        width: 50px;
+        height: 50px;
+    }
+}
     background-color: var(--color-white);
     color: var(--color-main);
     display: flex;
