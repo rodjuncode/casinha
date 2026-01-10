@@ -286,3 +286,21 @@ window.addEventListener('resize', () => {
     clearTimeout(window.gridResizeTimer);
     window.gridResizeTimer = setTimeout(populateImageGrid, 250);
 });
+
+// ============================================
+// Parallax Floating Icons
+// ============================================
+
+function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const icons = document.querySelectorAll('.floating-icon');
+    
+    icons.forEach(icon => {
+        const speed = parseFloat(icon.dataset.speed);
+        const yPos = scrolled * speed;
+        icon.style.transform = `translateY(${yPos}px)`;
+    });
+}
+
+window.addEventListener('scroll', updateParallax);
+window.addEventListener('load', updateParallax);
