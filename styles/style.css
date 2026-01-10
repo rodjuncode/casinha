@@ -9,6 +9,9 @@
 }
 
 :root {
+    /* Force light mode */
+    color-scheme: light only;
+    
     /* Brand Colors */
     --color-main: #4EA177;
     --color-highlight: #6132CC;
@@ -573,7 +576,7 @@ button {
     position: relative;
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
     margin: var(--spacing-md) 0;
 }
 
@@ -589,7 +592,7 @@ button {
 
 .testimonial-card {
     min-width: 100%;
-    padding: var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-md);
     background-color: var(--color-white);
     border-radius: 20px;
     opacity: 0;
@@ -608,14 +611,14 @@ button {
 }
 
 .testimonial-stars img {
-    height: 20px;
+    height: 24px;
 }
 
 .testimonial-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: var(--spacing-sm);
-    padding-top: var(--spacing-xs);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    padding-top: var(--spacing-sm);
     font-style: italic;
     color: var(--color-black);
 }
@@ -628,13 +631,13 @@ button {
 
 .testimonial-name {
     font-family: var(--font-title);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-main);
 }
 
 .google-link {
-    font-size: 0.813rem;
+    font-size: 0.875rem;
     color: var(--color-highlight);
     transition: color var(--transition-fast);
 }
@@ -645,52 +648,9 @@ button {
 }
 
 .carousel-arrow {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: var(--color-white);
-    color: var(--color-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all var(--transition-fast);
-    flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-    .carousel-container {
-        gap: var(--spacing-sm);
-    }
-    
-    .testimonial-card {
-        padding: var(--spacing-md);
-    }
-    
-    .testimonial-stars img {
-        height: 24px;
-    }
-    
-    .testimonial-text {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        margin-bottom: var(--spacing-md);
-        padding-top: var(--spacing-sm);
-    }
-    
-    .testimonial-name {
-        font-size: 1.25rem;
-    }
-    
-    .google-link {
-        font-size: 0.875rem;
-    }
-    
-    .carousel-arrow {
-        width: 50px;
-        height: 50px;
-    }
-}
     background-color: var(--color-white);
     color: var(--color-main);
     display: flex;
