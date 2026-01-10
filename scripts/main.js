@@ -235,3 +235,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ============================================
+// Dynamic Image Grid
+// ============================================
+
+function populateImageGrid() {
+    const grid = document.getElementById('imageGrid');
+    if (!grid) return;
+    
+    const images = JSON.parse(grid.dataset.images);
+    const gridWidth = grid.offsetWidth;
+    const naturalImageWidth = 214; // Fixed width of each image
+    const totalNaturalWidth = naturalImageWidth * images.length; // 6 * 214 = 1284px
+    
+    // Clear existing grid
+    grid.innerHTML = '';
+    
+    let imagesToShow = [];
+    let imageWidth = naturalImageWidth;
+    
+    // If 6 images at natural size (214px each) are wider than container, scale DOWN
+    if (totalNaturalWidth > gridWidth) {
+        imageWidth = Math.floor(gridWidth / images.length);
+        imagesToShow = images;
+    } else {
+        // If 6 images don't fill the container, repeat at natural size (214px)
+        const imagesNeeded = Math.ceil(gridWidth / naturalImageWidth);
+        for (let i = 0; i < imagesNeeded; i++) {
+            imagesToShow.push(images[i % images.length]);
+        }
+    }
+    
+    // Add images to grid
+    imagesToShow.forEach((imgSrc, index) => {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `Variation ${(index % images.length) + 1}`;
+        img.style.width = imageWidth + 'px';
+        gridItem.appendChild(img);
+        grid.appendChild(gridItem);
+    });
+}
+
+// Populate grid on load and resize
+window.addEventListener('load', populateImageGrid);
+window.addEventListener('resize', () => {
+    clearTimeout(window.gridResizeTimer);
+    window.gridResizeTimer = setTimeout(populateImageGrid, 250);
+});
